@@ -39,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: testartifact3
-          path: /home/runner/work/BrightID/BrightID/scripts/build_debug.sh
+          path: /home/runner/work/BrightID/BrightID/BrightID/scripts/build_debug.sh
