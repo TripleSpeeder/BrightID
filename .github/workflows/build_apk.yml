@@ -20,6 +20,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: eslint
-          path: node_modules/.bin/
+          path: ./node_modules/.bin/
 #          name: app-debug.apk
 #          path: android/app/build/outputs/apk/debug/
