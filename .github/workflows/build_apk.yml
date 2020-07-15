@@ -10,13 +10,17 @@ jobs:
         working-directory: BrightID
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: |
-          yarn install
-          echo "::add-path::/home/runner/work/BrightID/BrightID/BrightID/node_modules/.bin"
+#      - name: Install dependencies
+#        run: |
+#          yarn install
+#          echo "::add-path::/home/runner/work/BrightID/BrightID/BrightID/node_modules/.bin"
       - name: echo path
         run: |
           echo $PATH
+      - name: pwd
+        run: pwd
+      - name: list
+        run: ls -la
 #      - name: build
 #        run: |
 #          touch ./android/app/src/main/assets/index.android.bundle
