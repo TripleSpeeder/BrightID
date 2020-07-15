@@ -10,10 +10,10 @@ jobs:
         working-directory: BrightID
     steps:
       - uses: actions/checkout@v2
-#      - name: Install dependencies
-#        run: |
-#          yarn install
-#          echo "::add-path::/home/runner/work/BrightID/BrightID/BrightID/node_modules/.bin"
+      - name: Install dependencies
+        run: |
+          yarn install
+          echo "::add-path::/home/runner/work/BrightID/BrightID/BrightID/node_modules/.bin"
       - name: echo path
         run: |
           echo $PATH
@@ -21,10 +21,10 @@ jobs:
         run: pwd
       - name: list
         run: ls -la
-#      - name: build
-#        run: |
-#          touch ./android/app/src/main/assets/index.android.bundle
-#          sh ./scripts/build_debug.sh
+      - name: build
+        run: |
+          touch ./android/app/src/main/assets/index.android.bundle
+          sh ./scripts/build_debug.sh
       - name: Upload Artifact1
         uses: actions/upload-artifact@v2
         with:
@@ -33,8 +33,8 @@ jobs:
       - name: Upload Artifact2
         uses: actions/upload-artifact@v2
         with:
-          name: testartifact2
-          path: ./scripts/build_debug.sh
+          name: brightId-debug.apk
+          path: /home/runner/work/BrightID/BrightID/BrightID/android/app/build/outputs/apk/debug/app-debug.apk
       - name: Upload Artifact3
         uses: actions/upload-artifact@v2
         with:
