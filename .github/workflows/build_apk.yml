@@ -13,6 +13,7 @@ jobs:
       - name: Install dependencies
         run: |
           yarn install
+          echo "::add-path::/home/runner/work/BrightID/BrightID/BrightID/node_modules/.bin"
 #      - name: echo path
 #        run: |
 #          echo $PATH
