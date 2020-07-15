@@ -13,30 +13,20 @@ jobs:
       - name: Install dependencies
         run: |
           yarn install
-          echo "::add-path::/home/runner/work/BrightID/BrightID/BrightID/node_modules/.bin"
-      - name: echo path
-        run: |
-          echo $PATH
-      - name: pwd
-        run: pwd
-      - name: list
-        run: ls -la
-      - name: build
+#      - name: echo path
+#        run: |
+#          echo $PATH
+#      - name: pwd
+#        run: pwd
+#      - name: list
+#        run: ls -la
+      - name: build Android
         run: |
           touch ./android/app/src/main/assets/index.android.bundle
-          sh ./scripts/build_debug.sh
-      - name: Upload Artifact1
-        uses: actions/upload-artifact@v2
-        with:
-          name: testartifact1
-          path: scripts/build_debug.sh
-      - name: Upload Artifact2
+          react-native bundle --dev false --platform android --entry-file index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest ./android/app/src/main/res/
+          cd android && ./gradlew assembleDebug && cd ..
+      - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: brightId-debug.apk
           path: /home/runner/work/BrightID/BrightID/BrightID/android/app/build/outputs/apk/debug/app-debug.apk
-      - name: Upload Artifact3
-        uses: actions/upload-artifact@v2
-        with:
-          name: testartifact3
-          path: /home/runner/work/BrightID/BrightID/BrightID/scripts/build_debug.sh
