@@ -2,7 +2,7 @@ name: Build Android
 on: [push, pull_request]
 
 jobs:
-  build debug:
+  build_apk:
     runs-on: ubuntu-latest
     defaults:
       run:
